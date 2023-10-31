@@ -62,7 +62,7 @@ def format_file(filepath, type):
             text = general_formatting(text)
 
         # Write formatted text to file
-        with open("../data/txt/" + "Formatted_" + filename, 'w') as fw:
+        with open(re.sub('.txt', '_formatted.txt', filepath), 'w') as fw:
             fw.write(text)
     return
 
