@@ -165,7 +165,27 @@ def get_combined_sentences(src_par, tgt_par):
     
     return combined_sentences
 
-def evaluate(src_ref_par_list, tgt_ref_par_list, src_hyp_par_list, tgt_hyp_par_list):
+def evaluate(src_ref_path, tgt_ref_path, src_hyp_path, tgt_hyp_path):
+
+    src_ref_par_list=[]
+    fr = open(src_ref_path, "r")
+    src_ref_par_list = [fr.read().split("\n\n")]
+    fr.close()
+    
+    tgt_ref_par_list=[]
+    fr = open(tgt_ref_path, "r")
+    tgt_ref_par_list = [fr.read().split("\n\n")]
+    fr.close()
+    
+    src_hyp_par_list=[]
+    fr = open(src_hyp_path, "r")
+    src_hyp_par_list = [fr.read().split("\n\n")]
+    fr.close()
+    
+    tgt_hyp_par_list=[]
+    fr = open(tgt_hyp_path, "r")
+    tgt_hyp_par_list = [fr.read().split("\n\n")]
+    fr.close()
         
     # Get TPs, FPs and FNs for all paragraphs
     global_tp = 0
@@ -176,11 +196,8 @@ def evaluate(src_ref_par_list, tgt_ref_par_list, src_hyp_par_list, tgt_hyp_par_l
     for index, hyp_src_par in enumerate(src_hyp_par_list):
 
         hyp_tgt_par = tgt_hyp_par_list[index]
-        ref_src_par = ref_src_paragraphs[index]
-        ref_tgt_par = ref_tgt_paragraphs[index]
-
-        if index == 52:
-            print(ref_src_paragraphs[index+1])
+        ref_src_par = src_ref_par_list[index]
+        ref_tgt_par = tgt_ref_par_list[index]
 
         hyp_combined_sentences = get_combined_sentences(hyp_src_par, hyp_tgt_par)
         ref_combined_sentences = get_combined_sentences(ref_src_par, ref_tgt_par)
