@@ -17,15 +17,17 @@ Formats (or cleans) the raw text extracted from a document. Formatting operation
 ```
 # General document
 python format.py path/to/your/text.txt
+
 # Novel type document
 python format.py path/to/your/text.txt novel
 ```
 ### align.py
-Aligns sentences from src and tgt txt files, by specifying alignment method (Gale & Church only supported method for now). Also allows to evaluate generated (hypothesized) aligned sentences compared to reference src and tgt sentences.
+Used for the alignment of bilingual corpora. Aligns sentences from source and target languages, by specifying alignment method (Gale & Church is the only supported method for now). Also allows to evaluate generated (hypothesized) aligned sentences compared to reference src and tgt sentences.
 
 ```
 # Align src and target sentences
 python align.py align path/to/src/sentences.txt path/to/tgt/sentences.txt gc
+
 # Evaluate hypothesized aligned sentences compared to reference sentences
 python align.py evaluate path/to/ref/src/sentences.txt path/to/ref/tgt/sentences.txt path/to/hyp/src/sentences.txt path/to/hyp/tgt/sentences.txt
 ```
