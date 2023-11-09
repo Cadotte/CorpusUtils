@@ -1,4 +1,4 @@
-# Author: Antoine Cadotte
+# Author: Antoine Cadotte (2022)
 # https://github.com/cadotte
 # Based on code from pdfplumber: https://github.com/jsvine/pdfplumber
 

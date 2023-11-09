@@ -1,4 +1,4 @@
-# Author: Antoine Cadotte
+# Author: Antoine Cadotte (2022)
 # https://github.com/cadotte
 
 import os
