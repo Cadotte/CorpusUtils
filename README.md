@@ -1,7 +1,6 @@
 # CorpusUtils
 
 Set of utilities scripts for corpus preprocessing. Although they are mostly aimed at Machine Translation, many of the functions can be useful for any type of corpus.
-They were developed in-house as tools used for my Masters Thesis on Machine Translation.
 
 
 Divided into several python scripts, these utilities cover the following basic preprocessing steps: extraction, formatting, sentence alignment. The following presents each script, with their functions and use cases.
